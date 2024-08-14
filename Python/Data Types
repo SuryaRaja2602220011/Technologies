@@ -1,0 +1,24 @@
+List:
+------
+Orderable: all items have defined order, if we add items it will place at last
+changeable: all items inside list able to change (mutable in nature)
+duplicate: List will allow duplicates
+
+methods:
+---------
+a=[1,2,3,4]
+z=[8,7]
+
+a.append(1) #Append object to the end of the list
+b=a.count(1) #Return number of occurrences of value
+c=a.index(3) #Return first index of value
+a.insert(5,5) #nsert object before index
+a.pop(3) #Remove and return item at index (default last).
+a.reverse() # Reverse the list
+a.remove(5) #Remove first occurrence of value.
+a.extend(z) #Extend list by appending elements from the iterable
+a[0]=9 #Changeable
+a.clear() #clear all items in list
+
+
+
