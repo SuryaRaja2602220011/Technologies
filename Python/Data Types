@@ -48,6 +48,12 @@ print(green)
 print(tropic)
 print(red)
 
+Sets:
+----
+unordered, unchangeable*, and unindexed.
+
+
+
 
 
 
