@@ -5,7 +5,6 @@ changeable: all items inside list able to change (mutable in nature)
 duplicate: List will allow duplicates
 
 methods:
----------
 a=[1,2,3,4]
 z=[8,7]
 
@@ -19,6 +18,42 @@ a.remove(5) #Remove first occurrence of value.
 a.extend(z) #Extend list by appending elements from the iterable
 a[0]=9 #Changeable
 a.clear() #clear all items in list
+
+Tuples:
+--------
+ordered, unchangeable, and allow duplicate values.
+
+Change Tuple Values: Tuple values we cant able to change because its unmutable we can do workaround by converting the tuple to list then list to tuple.
+EG:
+a=(1,2,3,4,5)
+b=list(a)
+print("a:",type(a))
+print("b:",type(b))
+b[0]=6
+print("b:",b)
+print("a:",a)
+a=tuple(b)
+print(b)
+print(a)
+
+
+Remove Items: Use same workaround done for Change tuple values
+
+Unpack Tuples:
+fruits = ("apple", "mango", "papaya", "pineapple", "cherry")
+
+(green, *tropic, red) = fruits
+
+print(green)
+print(tropic)
+print(red)
+
+
+
+
+
+
+
 
 
 
