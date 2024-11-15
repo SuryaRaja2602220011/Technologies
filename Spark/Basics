@@ -1,0 +1,10 @@
+Read the data from file system:
+--------------------------------
+fire_df =(spark.read
+          .format("csv") 
+          .option("header", "true") 
+          .option("inferSchema", "true") 
+          .load("/FileStore/tables/employemnet_data.csv"))
+display(fire_df)
+
+
