@@ -1,3 +1,16 @@
+Create database:
+-----------------
+create database if not exists demo_db
+
+Create table:
+--------------
+%sql
+create table if not exists demo_db.fire_service_calls_tbl(
+  CallNumber integer,
+  UnitID string,
+  IncidentNumber integer,
+) using parquet
+
 Read the data from file system:
 --------------------------------
 fire_df =(spark.read
@@ -20,5 +33,24 @@ select * from global_temp.fire_service_calls_view //used to view the temporary t
 
 
 
+Notes:
+Cluster termination: if you inactive for 2hours cluster will be terminated and all data's will be earsed for cluster vm and spark metadata but not in storage layer
+Spark dataframe is unmutable so you need to create dataframed forto change column name
+Spark documanetation:
+------------------------
+https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/index.html
 
 
+
+
+Hadoop: uses master/slave archieture
+--------
+Hadoop is distributed data processing with core capabilities:
+1.Yarn(yet another resource manager) - cluster resourece manager(it allows multiple application run simantanestly in hadoop cluster and share resource and it har three components:
+          1.1. RM(resource manager) it will present inside master node.
+          1.2. NM(Node manager) acts as worker node.
+          1.3. AM(Application manager) acts as run the program.
+2.HDFS - Mmain use is Master node will receive the large file and split into small file and send to three worker nodes. Hadoop distributed file system contains two components
+          2.1 NN(name node) - will be installed in master node
+          2.2 DN(Data Node) - will be installed inide all worker nodes
+3.Map/Reduce - disturbed computing. 
