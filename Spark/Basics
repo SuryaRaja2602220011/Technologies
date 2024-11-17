@@ -7,4 +7,18 @@ fire_df =(spark.read
           .load("/FileStore/tables/employemnet_data.csv"))
 display(fire_df)
 
+//fire_df.take(10) -- used to display the records
+//display(fire_df) -- used to display the data in tabular form
+
+
+convert dataframe into view:
+---------------------------
+fire_db.createGlobalTempView("fire_service_calls_view")// used to create temp view from dataframe and stored in hidden database(global_temp)
+
+select * from global_temp.fire_service_calls_view //used to view the temporary table.
+
+
+
+
+
 
